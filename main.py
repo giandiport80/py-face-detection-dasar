@@ -6,7 +6,13 @@ camera = cv2.VideoCapture(0)  # 0 adalah kamera bawaan
 
 def face_detection(frame):
     optimized_frame = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-    faces = face_ref.detectMultiScale(optimized_frame, scaleFactor=1.1)
+    faces = face_ref.detectMultiScale(
+        image=optimized_frame, 
+        scaleFactor=1.1, 
+        minSize=(50, 50),
+        minNeighbors=5
+        )
+    
     return faces
 
 
