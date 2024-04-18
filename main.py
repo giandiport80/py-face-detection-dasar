@@ -7,12 +7,12 @@ camera = cv2.VideoCapture(0)  # 0 adalah kamera bawaan
 def face_detection(frame):
     optimized_frame = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
     faces = face_ref.detectMultiScale(
-        image=optimized_frame, 
-        scaleFactor=1.1, 
+        image=optimized_frame,
+        scaleFactor=1.1,
         minSize=(50, 50),
         minNeighbors=5
-        )
-    
+    )
+
     return faces
 
 
@@ -23,7 +23,7 @@ def drawer_box(frame):
 
 def close_window():
     camera.release()  # tutup kamera
-    cv2.destroyAllWindows()  #  menghentikan eksekusi cv2
+    cv2.destroyAllWindows()  # menghentikan eksekusi cv2
     exit()
 
 
@@ -39,4 +39,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
